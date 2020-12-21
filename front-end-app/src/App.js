@@ -1,21 +1,20 @@
-import cat from './cat.svg';
+import React, { Component, useEffect, useState } from "react";
+import Header from './Header.js';
+import Router from './router.js';
 import './App.css';
-import styled from "styled-components";
+import { BrowserRouter } from "react-router-dom";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-          <img src={cat} className="App-cat" alt="logo" />
-        <p>
-          Welcome to this cat-fact frontend test
-        </p>
-      </header>
-      <body className="App-body">
-        <p>Cat facts coming soon!</p>
-      </body>    
-    </div>
-  );
-}
+    return (
+      <BrowserRouter>
+        <>
+          <Header />
+          <div>
+            <Router/>
+          </div>
+        </>
+      </BrowserRouter>
+    );
+  }
 
 export default App;
