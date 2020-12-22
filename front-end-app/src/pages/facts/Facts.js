@@ -2,6 +2,10 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import './Facts.css';
 
+
+
+//Inefficient way of fetching API data with hooks as it will be loaded multiple
+//times navigating the two pages
 function Facts() {
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
@@ -30,7 +34,7 @@ function Facts() {
     else {
 
     return (
-      <body className="App-body">
+      <body className="Facts-body">
         <p>Cat facts are here!</p>
         <ul>
           {items.map(item => (
