@@ -3,10 +3,9 @@ import './Home.css';
 
 function Home() {
     return (
-      <body className="Home-body">
-        <p>Cat facts coming soon!</p>
-        <Link to="/facts">Facts</Link>
-      </body>
+      <div className="Home-body">
+        <Link className="Home-button" to="/facts">Show me facts, please</Link>
+      </div>
     )
   }
 
