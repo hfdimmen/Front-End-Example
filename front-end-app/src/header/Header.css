@@ -2,15 +2,15 @@
   text-align: center;
 }
 
-.Header-cat {
+.Header-animal {
   margin-top: 2%;
   height: 10vmin;
   pointer-events: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .Header-cat {
-    animation: App-cat-spin infinite 30s linear;
+  .Header-animal {
+    animation: Header-animal-spin infinite 30s linear;
   }
 }
 
@@ -29,7 +29,7 @@
   color: #61dafb;
 }
 
-@keyframes Header-cat-spin {
+@keyframes Header-animal-spin {
   from {
     transform: rotate(0deg);
   }
