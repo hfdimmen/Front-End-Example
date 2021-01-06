@@ -5,7 +5,7 @@
 .Header-animal {
   margin-top: 2%;
   height: 10vmin;
-  pointer-events: none;
+  pointer-events: all;
 }
 
 @media (prefers-reduced-motion: no-preference) {

@@ -13,9 +13,7 @@ function Header() {
   return (
     <div className="Header">
       <header className="Header-body">
-        <a onClick={catClicked} className="Header-link">
-          <img src={catClick ? fish : cat} className="Header-animal" alt="cat?" />
-        </a>
+        <img src={catClick ? fish : cat} onClick={() => catClicked()} className="Header-animal" alt="cat?" />
         <p>
           Welcome to this {catClick ? "fishy" : "cat fact"} frontend test
         </p>
