@@ -1,22 +1,10 @@
 
 .Home-body {
   background-color: #121418;
-  min-height: 75vh;
+  height: 80vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   font-size: calc(10px + 1vmin);
   color: white;
-}
-
-.Home-button {
-  background-color: #b36a17;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  margin-top: 2%;
-  cursor: pointer;
-  font-size: 16px;
 }

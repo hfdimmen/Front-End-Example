@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import Button from '../../components/button/button';
 import './Facts.css';
 
 //Inefficient way of fetching API data with hooks as it will be loaded multiple
@@ -39,9 +39,9 @@ function Facts() {
   }, [])
 
   if (error) {
-    return <div> Error: {error.message} </div>;
+    return <div className="Facts-body"> <p>Error: {error.message} </p></div>;
   } else if (!isLoaded || !items[0]) {
-    return <div>Loading API data...</div>
+    return <div className="Facts-body"><p>Loading API data...</p></div>
   }
   else {
     return (
@@ -54,7 +54,7 @@ function Facts() {
         <p>{items[count % items.length].text}</p>
         <button className="Facts-button" onClick={showHowMany}>How many cat facts are there?</button>
         {howManyFacts && <p>There are {items.length} facts... (I hoped this API had more...)</p>}
-        {howManyFacts && <Link className="Facts-button" to="/">Well.. take me home then!</Link>}
+        {howManyFacts && <Button link="/" label="Well.. take me home then!"/>}
       </div>)
   }
 }
