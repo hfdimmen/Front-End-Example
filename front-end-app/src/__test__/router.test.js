@@ -1,11 +1,8 @@
 import React from 'react';
-import { render, screen, cleanup } from '@testing-library/react';
-import { BrowserRouter } from "react-router-dom";
+import { render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router';
 
 import App from '../App';
-import Home from '../pages/home/Home';
-import Header from '../header/Header';
 import Router from '../router';
 import '@testing-library/jest-dom/extend-expect';
 
@@ -14,7 +11,6 @@ jest.mock('../pages/home/Home', () => () => <div>HomeMock</div>);
 jest.mock('../pages/facts/Facts', () => () => <div>FactsMock</div>);
 jest.mock('../pages/pageNotFound/PageNotFound', () => () => <div>PageNotFoundMock</div>);
 
-afterEach(cleanup);
 describe("Tests for router", () => {
     test("Should render page header and Home on default route", () => {
 
@@ -27,7 +23,7 @@ describe("Tests for router", () => {
       
     });
 
-    test("Should render page header and Home on default route", () => {
+    test("Should render Facts page on /facts route", () => {
 
         render(
         <MemoryRouter initialEntries={['/facts']}>
@@ -39,10 +35,21 @@ describe("Tests for router", () => {
       
     });
 
-    test("Should render page header and Home on default route", () => {
+    test("Should render PageNotFound on any other route (/invalid)", () => {
         
         render(
         <MemoryRouter initialEntries={['/invalid']}>
+            <Router />
+        </MemoryRouter>
+        );
+        
+        expect(screen.getByText("PageNotFoundMock")).toBeInTheDocument();
+    });
+
+    test("Should render PageNotFound on any other route (/home2)", () => {
+        
+        render(
+        <MemoryRouter initialEntries={['/home2']}>
             <Router />
         </MemoryRouter>
         );
